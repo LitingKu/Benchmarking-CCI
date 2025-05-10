@@ -1,0 +1,21 @@
+/* This file intentionally left blank. */
+/* Change color of sidebar group headings (like THEME DOCUMENTATION) */
+.wy-menu-vertical .caption-text {
+  color: #82c0cc !important; /* dark green */
+  font-weight: bold;
+}
+/* Regular links in the main documentation content */
+.rst-content a {
+  color: #489fb5 !important; /* olive-grey */
+  /*text-decoration: underline;*/
+}
+
+/* Hover effect for links */
+.rst-content a:hover {
+  color: #6d6875 !important; /* lighter olive */
+}
+/* Make the main content area wider */
+.wy-nav-content {
+    max-width: 1200px;  /* default is 800px */
+    margin: 0 auto;
+}
