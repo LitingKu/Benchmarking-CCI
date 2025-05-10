@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMMOT Analysis of CCI &mdash; Benchmarking CCI 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/nbsphinx-code-cells.css?v=2aa19091" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bfd7ebca" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SCOTIA Analysis of CCI" href="SCOTIA.html" />
+    <link rel="prev" title="SpatialDM Analysis of CCI" href="SpatialDM.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #489fb5" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Benchmarking CCI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Simulated Data Generation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Spot_level.html">Spot-level Simulated Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single_cell_level.html">Single-cell-level Simulated Data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Real ST Data Availability</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data_availability.html">Data availability</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Running Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CellPhoneDB/index.html">CellPhoneDB Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CellChat.html">CellChat_v2 Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpaTalk.html">SpaTalk Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpatialDM.html"><strong>SpatialDM Analysis of CCI</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>COMMOT Analysis of CCI</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.-Import-Package">1. <strong>Import Package</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-Run-the-Analysis">2. <strong>Run the Analysis</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SCOTIA.html"><strong>SCOTIA Analysis of CCI</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="NicheDE.html">NicheDE Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpaCCI.html">SpaCCI Analysis of CCI</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #489fb5" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Benchmarking CCI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><strong>COMMOT Analysis of CCI</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/COMMOT.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="COMMOT-Analysis-of-CCI">
+<h1><strong>COMMOT Analysis of CCI</strong><a class="headerlink" href="#COMMOT-Analysis-of-CCI" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>The COMMOT documentation and package could be found here: <a class="reference external" href="https://commot.readthedocs.io/en/latest">https://commot.readthedocs.io/en/latest</a></p></li>
+<li><p>The paper could be found here: <a class="reference external" href="https://doi.org/10.1038/s41592-022-01728-4">https://doi.org/10.1038/s41592-022-01728-4</a></p></li>
+</ul>
+<section id="1.-Import-Package">
+<h2>1. <strong>Import Package</strong><a class="headerlink" href="#1.-Import-Package" title="Link to this heading"></a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ot</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">anndata</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scanpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sc</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">sparse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">spearmanr</span><span class="p">,</span> <span class="n">pearsonr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.spatial</span><span class="w"> </span><span class="kn">import</span> <span class="n">distance_matrix</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">commot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ct</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="2.-Run-the-Analysis">
+<h2>2. <strong>Run the Analysis</strong><a class="headerlink" href="#2.-Run-the-Analysis" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The below shows an example analysis on analyzing spot level data, where I have prepared the data by the following columns: <code class="docutils literal notranslate"><span class="pre">[&quot;x&quot;,</span> <span class="pre">&quot;y&quot;,</span> <span class="pre">&quot;celltypeA&quot;,...,</span> <span class="pre">&quot;celltypeX&quot;,</span> <span class="pre">&quot;cell_type(dominant</span> <span class="pre">cell</span> <span class="pre">type)&quot;,</span> <span class="pre">&quot;GeneA&quot;,...,</span> <span class="pre">&quot;GeneX&quot;]</span></code>.</p></li>
+<li><p>When running the analysis, we use the default settings following their tutorial.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ct.tl.cluster_communication_spatial_permutation</span></code>: could obtain cell type specific interaction results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ct.tl.spatial_communication</span></code>: could obtain the direction pattern of the interaction results.</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;slice1&quot;</span><span class="p">]:</span>
+  <span class="n">path_exprsn</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/rsrch5/home/biostatistics/lku/ILIBD/data/</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">/exprsn_df.csv&#39;</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path_exprsn</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cell_type&#39;</span><span class="p">])</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell&#39;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
+  <span class="n">gene_expression</span><span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="s2">&quot;cell&quot;</span><span class="p">,</span><span class="s2">&quot;Excitatory_neurons&quot;</span><span class="p">,</span><span class="s2">&quot;Inhibitory_neuron&quot;</span><span class="p">,</span> <span class="s2">&quot;Astrocyte&quot;</span><span class="p">,</span> <span class="s2">&quot;Oligodendrocyte&quot;</span><span class="p">,</span><span class="s2">&quot;Oligodendrocyte_precursor_cell&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Microglia&quot;</span><span class="p">,</span><span class="s2">&quot;Pericytes&quot;</span><span class="p">,</span> <span class="s2">&quot;Endothelial_cells&quot;</span><span class="p">,</span><span class="s2">&quot;cell_type&quot;</span><span class="p">])</span>
+  <span class="n">meta_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="s2">&quot;cell_type&quot;</span><span class="p">,</span><span class="s1">&#39;cell&#39;</span><span class="p">]]</span>
+  <span class="n">meta_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;cell&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="c1"># Create AnnData object</span>
+  <span class="n">adata</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">AnnData</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">gene_expression</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="n">meta_data</span><span class="p">)</span>
+  <span class="n">adata</span><span class="o">.</span><span class="n">obsm</span><span class="p">[</span><span class="s1">&#39;spatial&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">meta_data</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+  <span class="n">adata</span><span class="o">.</span><span class="n">var_names_make_unique</span><span class="p">()</span>
+  <span class="n">adata</span><span class="o">.</span><span class="n">raw</span> <span class="o">=</span> <span class="n">adata</span>
+  <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">normalize_total</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">sc</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">adata</span><span class="p">)</span>
+  <span class="n">df_cellchat</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">ligand_receptor_database</span><span class="p">(</span><span class="n">species</span><span class="o">=</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="n">signaling_type</span><span class="o">=</span><span class="s1">&#39;Secreted Signaling&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;CellChat&#39;</span><span class="p">)</span>
+  <span class="n">df_cellchat_filtered</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">pp</span><span class="o">.</span><span class="n">filter_lr_database</span><span class="p">(</span><span class="n">df_cellchat</span><span class="p">,</span> <span class="n">adata</span><span class="p">,</span> <span class="n">min_cell_pct</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+
+  <span class="n">adata_dis500</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+  <span class="n">ct</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">spatial_communication</span><span class="p">(</span><span class="n">adata_dis500</span><span class="p">,</span> <span class="n">database_name</span><span class="o">=</span><span class="s1">&#39;cellchat&#39;</span><span class="p">,</span> <span class="n">df_ligrec</span><span class="o">=</span><span class="n">df_cellchat_filtered</span><span class="p">,</span> <span class="n">dis_thr</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">heteromeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pathway_sum</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+  <span class="n">adata_dis500</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;/rsrch5/home/biostatistics/lku/ILIBD/data/</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">/commot_dir_adata.h5ad&#39;</span><span class="p">)</span>
+
+  <span class="n">ct</span><span class="o">.</span><span class="n">tl</span><span class="o">.</span><span class="n">cluster_communication_spatial_permutation</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span>
+                                                  <span class="n">database_name</span><span class="o">=</span><span class="s1">&#39;cellchat&#39;</span><span class="p">,</span>
+                                                  <span class="n">df_ligrec</span><span class="o">=</span><span class="n">df_cellchat_filtered</span><span class="p">,</span>
+                                                  <span class="n">dis_thr</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">heteromeric</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                  <span class="n">clustering</span><span class="o">=</span><span class="s2">&quot;cell_type&quot;</span><span class="p">)</span>
+
+  <span class="n">adata</span><span class="o">.</span><span class="n">write</span><span class="p">(</span> <span class="sa">f</span><span class="s1">&#39;/rsrch5/home/biostatistics/lku/ILIBD/data/</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">/commot_cluster_adata.h5ad&#39;</span><span class="p">)</span>
+
+  <span class="c1"># Get the keys from adata.uns</span>
+  <span class="n">uns_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">adata</span><span class="o">.</span><span class="n">uns</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+  <span class="c1"># Define the prefix to split the keys</span>
+  <span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;commot_cluster_spatial_permutation-cell_type-cellchat-&#39;</span>
+  <span class="c1"># Initialize empty lists for pathways and LR pairs</span>
+  <span class="n">pathway_vector</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">lr_pair_vector</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="c1"># Iterate through the keys</span>
+  <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">uns_keys</span><span class="p">:</span>
+    <span class="c1"># Exclude non-relevant keys</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;commot_cluster_spatial_permutation-cell_type-cellchat-total-total&#39;</span><span class="p">,</span> <span class="s1">&#39;log1p&#39;</span><span class="p">]:</span>
+      <span class="k">continue</span>
+    <span class="n">key_suffix</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">key_suffix</span><span class="p">:</span>
+      <span class="n">lr_pair_vector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key_suffix</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">pathway_vector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key_suffix</span><span class="p">)</span>
+
+  <span class="c1"># Create an empty list to store the Links DataFrames</span>
+  <span class="n">LRpair_link</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">lr_pair_vector</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;commot_cluster_spatial_permutation-cell_type-cellchat-&#39;</span> <span class="o">+</span> <span class="n">pair</span>
+    <span class="c1">#pair = &#39;commot_cluster_spatial_permutation-celltype-cellchat-ANGPTL&#39;</span>
+    <span class="c1"># Extract the communication matrix and p-value matrix</span>
+    <span class="n">communication_matrix</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">uns</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;communication_matrix&#39;</span><span class="p">]</span>
+    <span class="n">communication_pvalue</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">uns</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;communication_pvalue&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Convert communication_matrix into a long-form DataFrame</span>
+    <span class="n">communication_df</span> <span class="o">=</span> <span class="n">communication_matrix</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">communication_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Convert communication_pvalue into a long-form DataFrame</span>
+    <span class="n">pvalue_df</span> <span class="o">=</span> <span class="n">communication_pvalue</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">pvalue_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">,</span> <span class="s1">&#39;pvalue&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Merge the two DataFrames on ligand and receptor</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">communication_df</span><span class="p">,</span> <span class="n">pvalue_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">])</span>
+    <span class="n">result_df</span><span class="p">[</span><span class="s1">&#39;interaction_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pair</span>
+    <span class="c1"># Create the interaction_name column</span>
+    <span class="c1">#result_df[&#39;interaction_name&#39;] = result_df[&#39;ligand&#39;] + &quot;_&quot; + result_df[&#39;receptor&#39;]</span>
+
+    <span class="c1"># Reorder columns</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">result_df</span><span class="p">[[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">,</span> <span class="s1">&#39;pvalue&#39;</span><span class="p">,</span> <span class="s1">&#39;interaction_name&#39;</span><span class="p">]]</span>
+
+    <span class="c1"># Append the current Links DataFrame to the list</span>
+    <span class="n">LRpair_link</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_df</span><span class="p">)</span>
+
+  <span class="c1"># Combine all Links DataFrames into one</span>
+  <span class="n">LRpair_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">LRpair_link</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+
+
+  <span class="c1"># Create an empty list to store the Links DataFrames</span>
+  <span class="n">pathway_link</span> <span class="o">=</span> <span class="p">[]</span>
+
+  <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">pathway_vector</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;commot_cluster_spatial_permutation-cell_type-cellchat-&#39;</span> <span class="o">+</span> <span class="n">pair</span>
+    <span class="c1">#pair = &#39;commot_cluster_spatial_permutation-celltype-cellchat-ANGPTL&#39;</span>
+    <span class="c1"># Extract the communication matrix and p-value matrix</span>
+    <span class="n">communication_matrix</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">uns</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;communication_matrix&#39;</span><span class="p">]</span>
+    <span class="n">communication_pvalue</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">uns</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="s1">&#39;communication_pvalue&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Convert communication_matrix into a long-form DataFrame</span>
+    <span class="n">communication_df</span> <span class="o">=</span> <span class="n">communication_matrix</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">communication_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Convert communication_pvalue into a long-form DataFrame</span>
+    <span class="n">pvalue_df</span> <span class="o">=</span> <span class="n">communication_pvalue</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">pvalue_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">,</span> <span class="s1">&#39;pvalue&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Merge the two DataFrames on ligand and receptor</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">communication_df</span><span class="p">,</span> <span class="n">pvalue_df</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">])</span>
+    <span class="n">result_df</span><span class="p">[</span><span class="s1">&#39;pathway&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pair</span>
+
+    <span class="c1"># Reorder columns</span>
+    <span class="n">result_df</span> <span class="o">=</span> <span class="n">result_df</span><span class="p">[[</span><span class="s1">&#39;ligand&#39;</span><span class="p">,</span> <span class="s1">&#39;receptor&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">,</span> <span class="s1">&#39;pvalue&#39;</span><span class="p">,</span> <span class="s1">&#39;pathway&#39;</span><span class="p">]]</span>
+
+    <span class="c1"># Append the current Links DataFrame to the list</span>
+    <span class="n">pathway_link</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result_df</span><span class="p">)</span>
+
+  <span class="c1"># Combine all Links DataFrames into one</span>
+  <span class="n">pathway_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">pathway_link</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  <span class="n">path_write_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/rsrch5/home/biostatistics/lku/ILIBD/data/</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">/commot_pathway_result.csv&#39;</span>
+  <span class="n">path_write_LR</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;/rsrch5/home/biostatistics/lku/ILIBD/data/</span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s1">/commot_interaction_result.csv&#39;</span>
+  <span class="n">pathway_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path_write_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+  <span class="n">LRpair_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">path_write_LR</span> <span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<br/></pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SpatialDM.html" class="btn btn-neutral float-left" title="SpatialDM Analysis of CCI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SCOTIA.html" class="btn btn-neutral float-right" title="SCOTIA Analysis of CCI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Li-Ting Ku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

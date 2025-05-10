@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NicheDE Analysis of CCI &mdash; Benchmarking CCI 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bfd7ebca" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SpaCCI Analysis of CCI" href="SpaCCI.html" />
+    <link rel="prev" title="SCOTIA Analysis of CCI" href="SCOTIA.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #489fb5" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Benchmarking CCI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Simulated Data Generation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Spot_level.html">Spot-level Simulated Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single_cell_level.html">Single-cell-level Simulated Data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Real ST Data Availability</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data_availability.html">Data availability</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Running Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CellPhoneDB/index.html">CellPhoneDB Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CellChat.html">CellChat_v2 Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpaTalk.html">SpaTalk Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpatialDM.html"><strong>SpatialDM Analysis of CCI</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="COMMOT.html"><strong>COMMOT Analysis of CCI</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCOTIA.html"><strong>SCOTIA Analysis of CCI</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NicheDE Analysis of CCI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">1. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#load-the-default-l-r-database-from-the-package">2. Load the default L-R database from the package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prepare-the-function-and-scrna-seq-reference-for-createlibrarymatrix">3. Prepare the function and scRNA-seq reference for <cite>CreateLibraryMatrix</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-analysis-and-generate-output-table-for-downstream-analysis">4. Run the analysis and generate output table for downstream analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SpaCCI.html">SpaCCI Analysis of CCI</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #489fb5" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Benchmarking CCI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">NicheDE Analysis of CCI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/NicheDE.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nichede-analysis-of-cci">
+<h1>NicheDE Analysis of CCI<a class="headerlink" href="#nichede-analysis-of-cci" title="Link to this heading"></a></h1>
+<p>The following R script demonstrates how we use NicheDE conduct the CCI analysis.</p>
+<ul class="simple">
+<li><p>The NicheDE documentation and package could be found here: <a class="reference external" href="https://github.com/kaishumason/NicheDE">https://github.com/kaishumason/NicheDE</a></p></li>
+<li><p>The paper could be found here: <a class="reference external" href="https://doi.org/10.1186/s13059-023-03159-6">https://doi.org/10.1186/s13059-023-03159-6</a></p></li>
+</ul>
+<section id="dependencies">
+<h2>1. Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">Sys.setenv</span><span class="p">(</span><span class="n">R_REMOTES_NO_ERRORS_FROM_WARNINGS</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="m">9999999</span><span class="p">)</span>
+<span class="c1">#devtools::install_github(&quot;kaishumason/NicheDE&quot;) # install</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">nicheDE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="load-the-default-l-r-database-from-the-package">
+<h2>2. Load the default L-R database from the package<a class="headerlink" href="#load-the-default-l-r-database-from-the-package" title="Link to this heading"></a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data</span><span class="p">(</span><span class="s">&quot;niche_net_ligand_target_matrix&quot;</span><span class="p">)</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;ramilowski_ligand_receptor_list&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="prepare-the-function-and-scrna-seq-reference-for-createlibrarymatrix">
+<h2>3. Prepare the function and scRNA-seq reference for <cite>CreateLibraryMatrix</cite><a class="headerlink" href="#prepare-the-function-and-scrna-seq-reference-for-createlibrarymatrix" title="Link to this heading"></a></h2>
+<p>We extracted and modified this function because the default implementation provided in the original package resulted in an error. The corrected version is shown below:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># scRNA reference data: include the sc_count and sc_meta</span>
+<span class="nf">load</span><span class="p">(</span><span class="s">&quot;/rsrch5/home/biostatistics/lku/ILIBD/data/sc_ref_data.rda&quot;</span><span class="p">)</span>
+
+<span class="n">CreateLibraryMatrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">cell_type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">mean</span><span class="p">(</span><span class="nf">rownames</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">cell_type</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">stop</span><span class="p">(</span><span class="s">&#39;data rownames and Cell type matrix names do not match&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="n">CT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">unique</span><span class="p">(</span><span class="nf">as.vector</span><span class="p">(</span><span class="n">cell_type</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]))</span>
+<span class="w">  </span><span class="n">n_CT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">CT</span><span class="p">)</span>
+<span class="w">  </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">n_CT</span><span class="p">,</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="w">  </span><span class="nf">rownames</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CT</span>
+<span class="w">  </span><span class="nf">colnames</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="n">n_CT</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="n">cell_type</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">CT</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Too many cell of type &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">CT</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="w"> </span><span class="s">&quot; downsampling to 1000.&quot;</span><span class="p">))</span>
+<span class="w">      </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+<span class="w">      </span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">cells</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">cells</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="s">&#39;Average expression matrix computed&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="kr">return</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="run-the-analysis-and-generate-output-table-for-downstream-analysis">
+<h2>4. Run the analysis and generate output table for downstream analysis<a class="headerlink" href="#run-the-analysis-and-generate-output-table-for-downstream-analysis" title="Link to this heading"></a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">folder_names</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;slice1&quot;</span><span class="p">)</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">folder_names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;doing dataset: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">))</span>
+<span class="w">  </span><span class="n">path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;/rsrch5/home/biostatistics/lku/ILIBD/data/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/exprsn_df.csv&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">cell_type</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;cell_type&quot;</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1"># Load counts matrix</span>
+<span class="w">  </span><span class="n">gene_spot_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">((</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">:</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">))]</span>
+<span class="w">  </span><span class="nf">rownames</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">cell</span>
+<span class="w">  </span><span class="n">gene_spot_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1"># Load coordinate matrix</span>
+<span class="w">  </span><span class="n">coord_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">)]</span>
+<span class="w">  </span><span class="nf">colnames</span><span class="p">(</span><span class="n">coord_data</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;imagerow&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;imagecol&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">rownames</span><span class="p">(</span><span class="n">coord_data</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1"># Extract cell proportions</span>
+<span class="w">  </span><span class="n">cell_index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;cell&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">celltype_index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;cell_type&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">cell_prop_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">((</span><span class="n">cell_index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">:</span><span class="p">(</span><span class="n">celltype_index</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">))])</span>
+<span class="w">  </span><span class="nf">rownames</span><span class="p">(</span><span class="n">cell_prop_df</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)</span>
+
+
+<span class="w">  </span><span class="c1"># Load expression profile matrix using CreateLibraryMatrix function</span>
+<span class="w">  </span><span class="n">our</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">CreateLibraryMatrix</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">sc_count</span><span class="p">),</span><span class="w"> </span><span class="n">sc_meta</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;TAG&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cell_type&quot;</span><span class="p">)])</span>
+<span class="w">  </span><span class="n">expression_profile</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">our</span><span class="p">[</span><span class="nf">colnames</span><span class="p">(</span><span class="n">cell_prop_df</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+
+<span class="w">  </span><span class="c1"># Construct NicheDE object and run analysis</span>
+<span class="w">  </span><span class="n">NDE_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">CreateNicheDEObject</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">,</span><span class="w"> </span><span class="n">coord_data</span><span class="p">,</span><span class="w"> </span><span class="n">expression_profile</span><span class="p">,</span><span class="w"> </span><span class="n">cell_prop_df</span><span class="p">,</span><span class="w"> </span><span class="n">sigma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="m">250</span><span class="p">))</span>
+<span class="w">  </span><span class="n">NDE_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">CalculateEffectiveNiche</span><span class="p">(</span><span class="n">NDE_obj</span><span class="p">)</span>
+<span class="w">  </span><span class="n">NDE_obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">niche_DE</span><span class="p">(</span><span class="n">NDE_obj</span><span class="p">,</span><span class="w"> </span><span class="n">num_cores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">outfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">gamma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">Int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">batch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">self_EN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1"># Run niche_LR analysis for all cell type pairs</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;- - - - - - - - -doing niche_LR&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="n">LR_results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">()</span>
+<span class="w">  </span><span class="n">celltypes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="n">cell_prop_df</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">celltypes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">type2</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">celltypes</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nf">tryCatch</span><span class="p">({</span>
+<span class="w">        </span><span class="n">LR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">niche_LR_spot</span><span class="p">(</span>
+<span class="w">          </span><span class="n">NDE_obj</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ligand_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type</span><span class="p">,</span>
+<span class="w">          </span><span class="n">receptor_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">type2</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ligand_target_matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">niche_net_ligand_target_matrix</span><span class="p">,</span>
+<span class="w">          </span><span class="n">lr_mat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ramilowski_ligand_receptor_list</span><span class="p">,</span>
+<span class="w">          </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">25</span><span class="p">,</span>
+<span class="w">          </span><span class="n">M</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span>
+<span class="w">          </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.05</span><span class="p">,</span>
+<span class="w">          </span><span class="n">truncation_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+<span class="w">        </span><span class="p">)</span>
+
+<span class="w">        </span><span class="n">result_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="n">type2</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">LR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">LR</span><span class="p">)</span>
+<span class="w">        </span><span class="n">LR</span><span class="o">$</span><span class="n">ligand_celltype</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">type</span>
+<span class="w">        </span><span class="n">LR</span><span class="o">$</span><span class="n">receptor_celltype</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">type2</span>
+<span class="w">        </span><span class="n">LR</span><span class="o">$</span><span class="n">interaction_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="n">LR</span><span class="o">$</span><span class="n">ligand</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">LR</span><span class="o">$</span><span class="n">receptor</span><span class="p">)</span>
+<span class="w">        </span><span class="n">LR_results</span><span class="p">[[</span><span class="n">result_name</span><span class="p">]]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">LR</span>
+<span class="w">      </span><span class="p">},</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Error in ligand_cell:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;receptor_cell:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="w">      </span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1"># Combine and save final result</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;- - - - - - - - - - - - - - writing dataframe&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="n">final_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">do.call</span><span class="p">(</span><span class="n">rbind</span><span class="p">,</span><span class="w"> </span><span class="n">LR_results</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">write.csv</span><span class="p">(</span><span class="n">final_df</span><span class="p">,</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;/rsrch5/home/biostatistics/lku/ILIBD/data/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/nichede_result_new.csv&quot;</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SCOTIA.html" class="btn btn-neutral float-left" title="SCOTIA Analysis of CCI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SpaCCI.html" class="btn btn-neutral float-right" title="SpaCCI Analysis of CCI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Li-Ting Ku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

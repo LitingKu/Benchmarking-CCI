@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpaTalk Analysis of CCI &mdash; Benchmarking CCI 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bfd7ebca" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="SpatialDM Analysis of CCI" href="SpatialDM.html" />
+    <link rel="prev" title="CellChat_v2 Analysis of CCI" href="CellChat.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #489fb5" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Benchmarking CCI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Simulated Data Generation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Spot_level.html">Spot-level Simulated Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single_cell_level.html">Single-cell-level Simulated Data</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Real ST Data Availability</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data_availability.html">Data availability</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Running Tools</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="CellPhoneDB/index.html">CellPhoneDB Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CellChat.html">CellChat_v2 Analysis of CCI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SpaTalk Analysis of CCI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">1. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-analysis">2. Run the analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SpatialDM.html"><strong>SpatialDM Analysis of CCI</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="COMMOT.html"><strong>COMMOT Analysis of CCI</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="SCOTIA.html"><strong>SCOTIA Analysis of CCI</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="NicheDE.html">NicheDE Analysis of CCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpaCCI.html">SpaCCI Analysis of CCI</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #489fb5" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Benchmarking CCI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SpaTalk Analysis of CCI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SpaTalk.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spatalk-analysis-of-cci">
+<h1>SpaTalk Analysis of CCI<a class="headerlink" href="#spatalk-analysis-of-cci" title="Link to this heading"></a></h1>
+<p>The following R script demonstrates how we use SpaTalk conduct the CCI analysis.</p>
+<ul class="simple">
+<li><p>The SpaTalk documentation and package could be found here: <a class="reference external" href="https://github.com/ZJUFanLab/SpaTalk">https://github.com/ZJUFanLab/SpaTalk</a></p></li>
+<li><p>The paper could be found here: <a class="reference external" href="https://doi.org/10.1038/s41467-022-32111-8">https://doi.org/10.1038/s41467-022-32111-8</a></p></li>
+</ul>
+<section id="dependencies">
+<h2>1. Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading"></a></h2>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">SpaTalk</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">NNLM</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="run-the-analysis">
+<h2>2. Run the analysis<a class="headerlink" href="#run-the-analysis" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>We follow the SpaTalk guidance and tutorial for the analysis.</p></li>
+</ul>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">folder_names</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;slice1&quot;</span><span class="p">)</span>
+<span class="kr">for</span><span class="w"> </span><span class="p">(</span><span class="n">num</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">folder_names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;doing dataset: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">))</span>
+<span class="w">  </span><span class="n">path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;/rsrch5/home/biostatistics/lku/ILIBD/data/&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/exprsn_df.csv&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">cell_type</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+<span class="w">  </span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">which</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;cell_type&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">gene_spot_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="nf">c</span><span class="p">((</span><span class="n">index</span><span class="m">+1</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">))]</span>
+<span class="w">  </span><span class="nf">rownames</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="o">$</span><span class="n">cell</span>
+<span class="w">  </span><span class="n">meta_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;cell&quot;</span><span class="p">,</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p">,</span><span class="s">&quot;cell_type&quot;</span><span class="p">)]</span>
+<span class="w">  </span><span class="n">meta_data</span><span class="o">$</span><span class="n">cell</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;cell&quot;</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="nf">nrow</span><span class="p">(</span><span class="n">meta_data</span><span class="p">)))</span>
+<span class="w">  </span><span class="nf">rownames</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">meta_data</span><span class="o">$</span><span class="n">cell</span>
+
+
+
+<span class="w">  </span><span class="c1">###### Option 1: Doing the deconvolution #######################</span>
+<span class="w">  </span><span class="c1"># create spatalk object</span>
+<span class="w">  </span><span class="n">obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">createSpaTalk</span><span class="p">(</span><span class="n">st_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)),</span>
+<span class="w">                       </span><span class="n">st_meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meta_data</span><span class="p">[,</span><span class="w"> </span><span class="m">-4</span><span class="p">],</span>
+<span class="w">                       </span><span class="n">species</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Human&quot;</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">if_st_is_sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">F</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">spot_max_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1"># scRNA reference data: include the sc_count and sc_meta</span>
+<span class="w">  </span><span class="nf">load</span><span class="p">(</span><span class="s">&quot;/rsrch5/home/biostatistics/lku/ILIBD/data/sc_ref_data.rda&quot;</span><span class="p">)</span>
+
+<span class="w">  </span><span class="n">obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dec_celltype</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span>
+<span class="w">                      </span><span class="n">sc_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">sc_count</span><span class="p">),</span>
+<span class="w">                      </span><span class="n">sc_celltype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc_meta</span><span class="o">$</span><span class="n">cell_type</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1">###### Option 2: If single cell level ST, direct assign cell type ##</span>
+<span class="w">  </span><span class="n">obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">createSpaTalk</span><span class="p">(</span><span class="n">st_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">as.matrix</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">gene_spot_df</span><span class="p">)),</span>
+<span class="w">                       </span><span class="n">st_meta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meta_data</span><span class="p">[,</span><span class="w"> </span><span class="m">-4</span><span class="p">],</span>
+<span class="w">                       </span><span class="n">species</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Human&quot;</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">if_st_is_sc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">T</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">spot_max_cell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span>
+<span class="w">                       </span><span class="n">celltype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">meta_data</span><span class="o">$</span><span class="n">cell_type</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1"># Find possible L-R database</span>
+<span class="w">  </span><span class="n">obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">find_lr_path</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">lrpairs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lrpairs</span><span class="p">,</span><span class="w"> </span><span class="n">pathways</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pathways</span><span class="p">)</span>
+<span class="w">  </span><span class="n">obj</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dec_cci_all</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">obj</span><span class="p">,</span><span class="w"> </span><span class="n">pvalue</span><span class="w"> </span><span class="o">=</span><span class="m">1.1</span><span class="p">)</span>
+<span class="w">  </span><span class="n">df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">obj</span><span class="o">@</span><span class="n">lrpair</span>
+<span class="w">  </span><span class="n">df</span><span class="o">$</span><span class="n">interaction_name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">paste0</span><span class="p">(</span><span class="n">df</span><span class="o">$</span><span class="n">ligand</span><span class="p">,</span><span class="s">&quot;_&quot;</span><span class="p">,</span><span class="n">df</span><span class="o">$</span><span class="n">receptor</span><span class="p">)</span>
+<span class="w">  </span><span class="n">final_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">df</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;celltype_sender&quot;</span><span class="p">,</span><span class="s">&quot;celltype_receiver&quot;</span><span class="p">,</span><span class="s">&quot;score&quot;</span><span class="p">,</span><span class="s">&quot;lr_co_ratio_pvalue&quot;</span><span class="p">,</span><span class="s">&quot;interaction_name&quot;</span><span class="p">)]</span>
+<span class="w">  </span><span class="nf">write.csv</span><span class="p">(</span><span class="n">final_table</span><span class="p">,</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;/rsrch5/home/biostatistics/lku/ILIBD/data/&quot;</span><span class="p">,</span><span class="n">num</span><span class="p">,</span><span class="s">&quot;/spatalk_result.csv&quot;</span><span class="p">))</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CellChat.html" class="btn btn-neutral float-left" title="CellChat_v2 Analysis of CCI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SpatialDM.html" class="btn btn-neutral float-right" title="SpatialDM Analysis of CCI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Li-Ting Ku.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
