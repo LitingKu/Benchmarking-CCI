@@ -38,7 +38,13 @@ html_static_path = ['_static']
 html_css_files = [
     'custom.css'
 ]
-
+html_context = {
+    "display_github": True,
+    "github_user": "LitingKu",
+    "github_repo": "Benchmarking-CCI",
+    "github_version": "main",
+    "conf_py_path": "/docs/source/",
+}
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
