@@ -5,7 +5,7 @@
 
 Benchmarking CCI - Reproducibility Documentation
 =============================================================================
-This website provides the original code on how we conduct the simulation and real data analysis with several CCI tools using ST data.
+This website provides the original code used to conduct simulations and real data analyses for benchmarking several cell–cell interaction (CCI) inference tools on spatial transcriptomics (ST) data. We primarily focus on methods that rely on statistical testing, rather than machine learning–based approaches, to resolve interactions between specific cell types across ST datasets of varying resolutions.
 
 .. toctree::
    :caption: Simulated Data Generation
@@ -40,10 +40,4 @@ This website provides the original code on how we conduct the simulation and rea
 
 
 
-Acknowledgement
-================
-
-
-Citation
-================
 
