@@ -42,7 +42,7 @@ CellNEST could only be run on GPU node. Here we demonstrate how to run on High C
 .. code-block:: r
 
    #!/bin/bash
-   #BSUB -J HG1_train
+   #BSUB -J LG2_train
    #BSUB -W 48:00
    #BSUB -q gpu
    #BSUB -gpu "num=1:gmem=16"
@@ -77,7 +77,7 @@ CellNEST could only be run on GPU node. Here we demonstrate how to run on High C
 
 
 
-3. Post-Processing Step   
+3. Postprocessing Step   
 -------------------------
 
 .. code-block:: bash
