@@ -80,6 +80,33 @@ CellNEST could only be run on GPU node. Here we demonstrate how to run on High C
 3. Post-Processing Step   
 -------------------------
 
+.. code-block:: bash
+
+   #!/bin/bash
+   #BSUB -J IPMN_postprocess_LG2
+   #BSUB -W 24:00
+   #BSUB -q gpu
+   #BSUB -gpu "num=1:gmem=16"
+   #BSUB -n 4
+   #BSUB -R "rusage[mem=32GB]"
+   #BSUB -M 32
+   #BSUB -o logs/cellnest_postprocess.%J.out
+   #BSUB -e logs/cellnest_postprocess.%J.err
+   #BSUB -cwd /home/lku/CellNEST
+   #BSUB -B
+   #BSUB -N
+   #BSUB -u lku@mdanderson.org
+
+   module load singularity
+
+   singularity exec --nv \
+       --bind /home/lku:/home/lku \
+       /home/lku/cellnest_image.sif \
+       bash cellnest postprocess \
+           --data_name='IPMN_LG2' \
+           --model_name='IPMN_LG2' \
+           --total_runs=5
+
 
 
 
