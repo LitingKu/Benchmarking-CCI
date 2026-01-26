@@ -36,59 +36,44 @@ CellNEST could only be run on GPU node. Here we demonstrate how to run on High C
      --data_from='data/IPMN_LG2/'
 
 
-2. Run the analysis 
+2. Train the CellNEST Model 
 -------------------------
-
-- We follow the SpaCCI guidance and tutorial for the analysis
 
 .. code-block:: r
 
-   folder_names <- c("slice1")
-   for (num in folder_names) {
-     print(paste0("doing dataset: ", num))
-     path <- paste0("/rsrch5/home/biostatistics/lku/ILIBD/data/", num, "/exprsn_df.csv")
-     data <- read.csv(path)
-     data <- data[!is.na(data$cell_type), ]
+   #!/bin/bash
+   #BSUB -J HG1_train
+   #BSUB -W 48:00
+   #BSUB -q gpu
+   #BSUB -gpu "num=1:gmem=16"
+   #BSUB -n 4
+   #BSUB -R "rusage[mem=32GB]"
+   #BSUB -M 32
+   #BSUB -o logs/IPMN/LG2_train.%J.out
+   #BSUB -e logs/IPMN/LG2_train.%J.err
+   #BSUB -cwd /home/lku/CellNEST
+   #BSUB -B
+   #BSUB -N
+   #BSUB -u lku@mdanderson.org
 
-     # Prepare the gene expression dataframe
-     index <- which(colnames(data)=="cell_type")
-     gene_spot_df <- data[,c((index+1) : ncol(data))]
-     rownames(gene_spot_df) <- data$cell
-     gene_spot_df <- as.data.frame(t(gene_spot_df))
-     library.size <- Matrix::colSums(gene_spot_df)
-     gene_spot_df <- as.data.frame(Matrix::t(Matrix::t(gene_spot_df)/library.size) *10000) # normalized data matrix
-     gene_spot_df[is.na(gene_spot_df)] <- 0
-     
-     # Prepare the cell type proportion data frame
-     cell_index <- which(colnames(data)=="cell")
-     celltype_index <- which(colnames(data)=="cell_type")
-     cell_prop_df <- data[,c((cell_index+1):(celltype_index-1))]
-     rownames(cell_prop_df) <- data$cell
-     spatial_coords_df <- data[,c("x","y"),drop=FALSE]
-     colnames(spatial_coords_df) <- c("imagecol", "imagerow")  
-     rownames(spatial_coords_df) <- file$cell
-     spatial_coords_df$Spot_ID <- rownames(spatial_coords_df)
+   module load singularity
 
-
-     # Extract the L-R database, here we use the CellChat human database (you could explore other options)
-     LRDB <- LR_database("Human", "CellChat", gene_spot_df)
-
-     # Run the global analysis
-     result_global <- run_SpaCCI(gene_spot_expression_dataframe = gene_spot_df,
-                                 spot_cell_proportion_dataframe = cell_prop_df,
-                                 spatial_coordinates_dataframe = spatial_coords_df,
-                                 LR_database_list = LRDB,
-                                 analysis_scale = "global")
-      
-     df <- result_global1$pvalue_df
-     df <- df[,c("Cell_type_Ligand" ,"Cell_type_Receptor", "strength" ,"adjusted.PValue" ,"interaction_name","ligand.symbol","receptor.symbol")]
-     colnames(df) <- c("ligand" ,  "receptor" ,"strength"  ,  "pvalue"  , "interaction_name" ,"ligand_gene","receptor_gene")
-  
-     write.csv(df,paste0("/rsrch5/home/biostatistics/lku/ILIBD/data/",num,"/spacci_result.csv"))
- 
-
-   }
-
+   for RUNID in 1 2 3 4 5
+   do
+       echo "Starting run_id=${RUNID} at $(date)"
+       singularity exec --nv \
+           --bind /home/lku:/home/lku \
+           /home/lku/cellnest_image.sif \
+           bash cellnest run \
+               --data_name='IPMN_LG2' \
+               --num_epoch 80000 \
+               --model_name='IPMN_LG2' \
+               --run_id=${RUNID} \
+               --manual_seed='yes' \
+               --seed=${RUNID} \
+               > logs/IPMN_train/LG2_output_run_${RUNID}.log 2>&1
+       echo "Finished run_id=${RUNID} at $(date)"
+   done
 
 
 
